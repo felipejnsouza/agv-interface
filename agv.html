@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="agv.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>AGV Interface</title>
+</head>
+<body>
+    <header>
+        <h1>SENAI Centro 4.0</h1>
+    </header>
+
+    <div class="request">
+        <h2>SOLICITAÇÃO DE ABASTECIMENTO</h2>
+        <FORM:post>
+            <button type="submit" id="send">SOLICITAR</button>
+        </FORM:post>
+    </div>
+
+    <div class="connection">
+        <h3>CONECTE-SE AO AGV</h3>
+        <FORM:post>
+            <button type="submit" id="connect">CONECTAR</button>
+            <button type="submit" id="disconnect">DESCONECTAR</button>
+        </FORM:post>
+    </div>
+
+    <SCript>
+        const send = document.getElementById("send")
+        const connect = document.getElementById("connect")
+        const disconnect = document.getElementById("disconnect")
+
+        send.addEventListener("click", () => {
+            console.log("clicou")
+
+            async function sendData () {
+            const rawResponse = await fetch('http://192.168.10.168:3334/ld', {
+                method: 'POST',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({action: 'patrolonce route1'})
+            });
+            const content = await rawResponse.json();
+
+            console.log(content);
+            };
+            sendData()
+        
+        })
+
+        connect.addEventListener("click", () => {
+            console.log("clicou")
+
+            async function sendData () {
+            const rawResponse = await fetch('http://192.168.10.168:3334/ld', {
+                method: 'POST',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({action: 'connect'})
+            });
+            const content = await rawResponse.json();
+
+            console.log(content);
+            };
+            sendData()
+        
+        })
+
+        disconnect.addEventListener("click", () => {
+            console.log("clicou")
+
+            async function sendData () {
+            const rawResponse = await fetch('http://192.168.10.168:3334/ld', {
+                method: 'POST',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({action: 'quit'})
+            });
+            const content = await rawResponse.json();
+
+            console.log(content);
+            };
+            sendData()
+        
+        })
+        
+
+        
+    </SCript>
+
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(112, 173, 241);
+}
+
+button{
+    cursor: pointer;
+}
+
+header{
+    margin: 60px auto;
+    padding: 40px auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: cornsilk;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.request{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    padding: 50px auto;
+}
+
+.request h2{
+    color: black;
+    font-size: 25px;
+}
+
+.request button{
+    margin-top: 20px;
+    width: 250px;
+    height: 50px;
+    background: rgb(255, 251, 0);
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.connection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto;
+    padding: 50px auto;
+}
+
+.connection button{
+    font-size: 15px;
+    width: 150px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.connection button+button{
+    margin-left: 10px;
+}
+
+#connect{
+    background: greenyellow;
+}
+
+#disconnect{
+    background: rgb(236, 80, 119);
+}
